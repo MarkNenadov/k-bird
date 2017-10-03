@@ -9,6 +9,10 @@ import java.io.File
 fun main( args: Array<String> ) {
     val configuration = loadConfiguration()
 
+    fetchRecentChecklists( configuration );
+}
+
+fun fetchRecentChecklists( configuration: KbirdConfiguration ) {
     val recentChecklists = CountyRecentVisitsPageParser( CountyCodes.ESSEX_ONTARIO_CANADA ).fetchRecentChecklists();
     Thread.sleep( 300 );
     for ( checklist in recentChecklists ) {
@@ -20,7 +24,5 @@ fun main( args: Array<String> ) {
 
 fun loadConfiguration(): KbirdConfiguration {
     val mapper = jacksonObjectMapper();
-    val kbirdConfiguration = mapper.readValue<KbirdConfiguration>( File( System.getProperty( "user.dir" ) + "/src/main/resources/configuration.json" ) )
-
-    return kbirdConfiguration
+    return  mapper.readValue<KbirdConfiguration>( File( System.getProperty( "user.dir" ) + "/src/main/resources/configuration.json" ) )
 }
