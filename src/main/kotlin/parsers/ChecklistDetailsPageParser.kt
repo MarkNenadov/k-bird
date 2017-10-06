@@ -4,7 +4,7 @@ import KBirdConfiguration
 import domain.SpeciesEntry
 import org.jsoup.nodes.Element
 
-class ChecklistDetailsPageParser( checklistIdentifier: String, configuration: KBirdConfiguration ) : BasePageParser( configuration.baseEBirdPath + "view/checklist/" + checklistIdentifier ) {
+class ChecklistDetailsPageParser( checklistIdentifier: String, configuration: KBirdConfiguration ) : BasePageParser( configuration.baseEBirdUrl + "view/checklist/" + checklistIdentifier ) {
     fun fetchSpeciesEntries() : ArrayList<SpeciesEntry> {
         val speciesEntries = ArrayList<SpeciesEntry>()
         selectClass( "spp-entry" ).mapTo( speciesEntries ) { parseSpeciesEntry( it ) }

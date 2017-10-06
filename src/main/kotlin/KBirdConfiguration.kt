@@ -3,7 +3,8 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import java.io.File
 
 class KBirdConfiguration {
-    var baseEBirdPath = ""
+    var baseEBirdUrl = ""
+    var jsoupForHotspotDetailsSpeciesCount = ""
 
     companion object {
         val CONFIGURATION_FILE_PATH = "/src/main/resources/configuration.json"
@@ -13,4 +14,3 @@ class KBirdConfiguration {
         }
     }
 }
-
