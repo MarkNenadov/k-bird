@@ -1,10 +1,10 @@
 package parsers
 
-import domain.KbirdConfiguration
+import KBirdConfiguration
 import domain.SpeciesEntry
 import org.jsoup.nodes.Element
 
-class ChecklistDetailsPageParser( checklistIdentifier: String, configuration: KbirdConfiguration ) : BasePageParser( configuration.baseEBirdPath + "view/checklist/" + checklistIdentifier ) {
+class ChecklistDetailsPageParser( checklistIdentifier: String, configuration: KBirdConfiguration ) : BasePageParser( configuration.baseEBirdPath + "view/checklist/" + checklistIdentifier ) {
     fun fetchSpeciesEntries() : ArrayList<SpeciesEntry> {
         val speciesEntries = ArrayList<SpeciesEntry>()
         selectClass( "spp-entry" ).mapTo( speciesEntries ) { parseSpeciesEntry( it ) }
@@ -12,7 +12,7 @@ class ChecklistDetailsPageParser( checklistIdentifier: String, configuration: Kb
         return speciesEntries
     }
 
-    private fun parseSpeciesEntry(element: Element ) : SpeciesEntry {
+    private fun parseSpeciesEntry( element: Element ) : SpeciesEntry {
         return SpeciesEntry( element.select(".se-name").text(), element.select(".se-count" ).text() )
     }
 
