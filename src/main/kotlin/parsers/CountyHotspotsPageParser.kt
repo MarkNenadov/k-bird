@@ -5,12 +5,13 @@ import KBirdConfiguration
 import base.GpsCoordinates
 import org.jsoup.Jsoup
 
-class CountyHotspotsPageParser(var configuration: KBirdConfiguration, countyCode: String ): BasePageParser( configuration.baseEBirdUrl + "/subnational2/" + countyCode + "/hotspots?yr=all&m=" ) {
+class CountyHotspotsPageParser( var configuration: KBirdConfiguration, countyCode: String ): BasePageParser( configuration.baseEBirdUrl + "/subnational2/" + countyCode + "/hotspots?yr=all&m=" ) {
     fun fetchHotspots(): List<Hotspot> {
         val hotspots = ArrayList<Hotspot>()
 
         for ( hotspotLinkTdElement in selectClass( "top-observer--subregion" ) ) {
-            val hotspot = Hotspot.createFromLinkElement(hotspotLinkTdElement.select("a").first())
+            val hotspot = Hotspot.createFromLinkElement( hotspotLinkTdElement.select("a").first() )
+            println( "Fetched hotspot [" + hotspot.name +  "]..going to sleep for 2 seconds" )
             Thread.sleep( 4000 )
             parsePageDetails( hotspot )
 

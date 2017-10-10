@@ -9,7 +9,6 @@ fun fetchHotspots(configuration: KBirdConfiguration, countyCode: String) {
     val hotspots = CountyHotspotsPageParser(configuration, countyCode).fetchHotspots()
 
     for (hotspot in hotspots) {
-        println( hotspot.getAsMarkdownListItem( configuration ) )
-        //println(hotspot.getJson())
+        println(hotspot.getJson())
     }
 }
