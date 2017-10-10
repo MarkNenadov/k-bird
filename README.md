@@ -1,4 +1,7 @@
-#eBird scrapper tools written in Kotlin.#
+k-bird
+======
+
+An eBird scrapper tools written in Kotlin.
 
 fetch-recent-county-checklists.kt
 * outputs recent checklists for a county in JSON format.
