@@ -1,5 +1,5 @@
 import domain.CountyCodes
-import parsers.CountyHotspotsPageParser
+import org.pythonbyte.kbird.parsers.CountyHotspotsPageParser
 
 fun main(args: Array<String> ) {
     fetchHotspots( KBirdConfiguration.loadConfiguration(), CountyCodes.ESSEX_ONTARIO_CANADA )

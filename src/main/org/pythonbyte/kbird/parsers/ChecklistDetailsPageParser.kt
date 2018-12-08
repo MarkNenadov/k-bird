@@ -1,4 +1,4 @@
-package parsers
+package org.pythonbyte.kbird.parsers
 
 import KBirdConfiguration
 import domain.SpeciesEntry

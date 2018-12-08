@@ -1,7 +1,5 @@
-import domain.CountyCodes
-import parsers.ChecklistDetailsPageParser
-import parsers.CountyRecentVisitsPageParser
-import parsers.HotspotRecentVisitsPageParser
+import org.pythonbyte.kbird.parsers.ChecklistDetailsPageParser
+import org.pythonbyte.kbird.parsers.HotspotRecentVisitsPageParser
 
 fun main(args: Array<String> ) {
     val MALDEN_PARK_WINDSOR_ONTARIO_ID = "L374235"

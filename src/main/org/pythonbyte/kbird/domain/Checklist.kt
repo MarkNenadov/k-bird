@@ -22,7 +22,7 @@ class Checklist: DomainObject() {
 
             val linkElement = element.select( ".obstable-date" ).select( "a" ).first()
             checklist.link = linkElement.attr( "href" )
-            checklist.identifier = checklist.link.replace( "/ebird/view/checklist/", "" )
+            checklist.identifier = checklist.link.replace( "/view/checklist/", "" )
             checklist.date = linkElement.text()
 
             return checklist

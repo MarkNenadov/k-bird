@@ -1,6 +1,6 @@
 import domain.CountyCodes
-import parsers.ChecklistDetailsPageParser
-import parsers.CountyRecentVisitsPageParser
+import org.pythonbyte.kbird.parsers.ChecklistDetailsPageParser
+import org.pythonbyte.kbird.parsers.CountyRecentVisitsPageParser
 
 fun main( args: Array<String> ) {
     fetchRecentChecklists( KBirdConfiguration.loadConfiguration(), CountyCodes.ESSEX_ONTARIO_CANADA )

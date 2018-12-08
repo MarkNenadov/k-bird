@@ -1,4 +1,4 @@
-package parsers
+package org.pythonbyte.kbird.parsers
 
 import org.pythonbyte.kbird.domain.Checklist
 import kotlin.collections.ArrayList

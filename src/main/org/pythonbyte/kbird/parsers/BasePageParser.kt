@@ -1,4 +1,4 @@
-package parsers
+package org.pythonbyte.kbird.parsers
 
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
