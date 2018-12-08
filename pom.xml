@@ -6,7 +6,7 @@
 
     <groupId>org.pythonbyte</groupId>
     <artifactId>k-bird</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1</version>
 
     <properties>
         <kotlin.version>1.3</kotlin.version>
@@ -26,23 +26,23 @@
         <dependency>
             <groupId>com.cedarsoftware</groupId>
             <artifactId>json-io</artifactId>
-            <version>4.10.0</version>
+            <version>4.10.1</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jre8</artifactId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test</artifactId>
+            <artifactId>kotlin-test-junit</artifactId>
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.3.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -1,7 +1,7 @@
 package org.pythonbyte.kbird.domain
 
-import junit.framework.TestCase.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class HotspotTest {
     @Test
