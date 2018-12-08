@@ -1,4 +1,4 @@
-package base
+package org.pythonbyte.kbird.base
 
 class GpsCoordinates( longitudeLatitude: String? ) {
     var longitude: Float = longitudeLatitude!!.replace( " ", "").split( "," ).get( 0 ).toFloat();

@@ -1,7 +1,7 @@
 package parsers
 
 import KBirdConfiguration
-import domain.Checklist
+import org.pythonbyte.kbird.domain.Checklist
 
 class HotspotRecentVisitsPageParser( hotspotIdentifier: String, kBirdConfiguration: KBirdConfiguration ): BasePageParser(  kBirdConfiguration.baseEBirdUrl + "/hotspot/" + hotspotIdentifier + "/activity?yr=all&m=" ) {
     fun fetchRecentChecklists() : List<Checklist> {

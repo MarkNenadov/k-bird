@@ -1,6 +1,6 @@
 package parsers
 
-import domain.Checklist
+import org.pythonbyte.kbird.domain.Checklist
 import kotlin.collections.ArrayList
 
 class CountyRecentVisitsPageParser( countyCode: String ) : BasePageParser( "http://ebird.org/ebird/subnational2/$countyCode/activity" ) {

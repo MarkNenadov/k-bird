@@ -1,9 +1,9 @@
 package parsers
 
-import domain.Hotspot
+import org.pythonbyte.kbird.domain.Hotspot
 import KBirdConfiguration
-import base.GpsCoordinates
 import org.jsoup.Jsoup
+import org.pythonbyte.kbird.base.GpsCoordinates
 
 class CountyHotspotsPageParser( var configuration: KBirdConfiguration, countyCode: String ): BasePageParser( configuration.baseEBirdUrl + "/subnational2/" + countyCode + "/hotspots?yr=all&m=" ) {
     fun fetchHotspots(): List<Hotspot> {

@@ -1,8 +1,10 @@
-package domain
+package org.pythonbyte.kbird.domain
 
-import junit.framework.TestCase
+import junit.framework.TestCase.assertEquals
+import org.junit.Test
 
-class HotspotTest: TestCase() {
+class HotspotTest {
+    @Test
     fun testGetAsMarkdownListItem() {
         val configuration = KBirdConfiguration.loadConfiguration()
         val hotspot = Hotspot("Sleepy Hollows", "http://test.url" )
