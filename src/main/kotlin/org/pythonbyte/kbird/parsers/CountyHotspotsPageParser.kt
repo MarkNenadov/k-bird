@@ -3,7 +3,7 @@ package org.pythonbyte.kbird.parsers
 import org.pythonbyte.kbird.domain.Hotspot
 import KBirdConfiguration
 import org.jsoup.Jsoup
-import org.pythonbyte.kbird.base.GpsCoordinates
+import org.pythonbyte.krux.mapping.GpsCoordinates
 
 class CountyHotspotsPageParser( var configuration: KBirdConfiguration, countyCode: String ): BasePageParser( configuration.baseEBirdUrl + "/subnational2/" + countyCode + "/hotspots?yr=all&m=" ) {
     fun fetchHotspots(): List<Hotspot> {

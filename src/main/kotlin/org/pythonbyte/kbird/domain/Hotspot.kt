@@ -2,8 +2,7 @@ package org.pythonbyte.kbird.domain
 
 import org.jsoup.nodes.Element
 import KBirdConfiguration
-import domain.DomainObject
-import org.pythonbyte.kbird.base.GpsCoordinates
+import org.pythonbyte.krux.mapping.GpsCoordinates
 
 class Hotspot ( var name: String, var url: String ) : DomainObject() {
     var speciesCount: Number? = 0

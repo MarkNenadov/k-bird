@@ -1,4 +1,4 @@
-package domain
+package org.pythonbyte.kbird.domain
 
 import com.cedarsoftware.util.io.JsonWriter
 

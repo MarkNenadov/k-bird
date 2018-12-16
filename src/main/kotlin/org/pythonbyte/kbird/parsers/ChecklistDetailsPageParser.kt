@@ -1,8 +1,8 @@
 package org.pythonbyte.kbird.parsers
 
 import KBirdConfiguration
-import domain.SpeciesEntry
 import org.jsoup.nodes.Element
+import org.pythonbyte.kbird.domain.SpeciesEntry
 
 class ChecklistDetailsPageParser( checklistIdentifier: String, configuration: KBirdConfiguration ) : BasePageParser( configuration.baseEBirdUrl + "view/checklist/" + checklistIdentifier ) {
     fun fetchSpeciesEntries() : ArrayList<SpeciesEntry> {

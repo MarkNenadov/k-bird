@@ -1,4 +1,4 @@
-package domain
+package org.pythonbyte.kbird.domain
 
 class CountyCodes {
     companion object {

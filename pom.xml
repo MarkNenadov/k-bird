@@ -29,6 +29,11 @@
             <version>4.10.1</version>
         </dependency>
         <dependency>
+            <groupId>org.pythonbyte</groupId>
+            <artifactId>pythonbyte-krux</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
@@ -59,7 +64,8 @@
     </dependencies>
 
     <build>
-        <testSourceDirectory>src/test</testSourceDirectory>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -85,6 +91,30 @@
                     <jvmTarget>1.8</jvmTarget>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <execution>
+                        <id>install-external</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <file>${basedir}/lib/pythonbyte-krux.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>org.pythonbyte</groupId>
+                            <artifactId>pythonbyte-krux</artifactId>
+                            <version>0.1</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 

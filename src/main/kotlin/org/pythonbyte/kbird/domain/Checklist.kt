@@ -1,7 +1,4 @@
 package org.pythonbyte.kbird.domain
-
-import domain.DomainObject
-import domain.SpeciesEntry
 import org.jsoup.nodes.Element
 
 class Checklist: DomainObject() {
