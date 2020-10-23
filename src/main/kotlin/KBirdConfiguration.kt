@@ -5,7 +5,7 @@ class KBirdConfiguration {
     var jsoupForHotspotDetailsSpeciesCount = ""
 
     companion object {
-        const val PROPERTIES_FILE = "k-bird.properties"
+        const val PROPERTIES_FILE = "/k-bird.properties"
 
         fun loadConfiguration(): KBirdConfiguration {
             val propertyReader = PropertyReader(PROPERTIES_FILE)
