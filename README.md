@@ -12,4 +12,4 @@ scrape-recent-hotspot-checklists.kt
 scrape-hotspots
 * outputs top hotspots for a county in json format
 
-Mark Nenadov, 2017-2018
+Mark Nenadov

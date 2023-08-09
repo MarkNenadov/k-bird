@@ -16,11 +16,12 @@ class Checklist: DomainObject() {
             checklist.personName = element.select(".recent-visitor" ).text()
             checklist.location = element.select( ".obstable-location" ).text()
             checklist.time = element.select( "obstable-time").text()
+            checklist.identifier = checklist.link.replace( "/view/checklist/", "" )
 
             val linkElement = element.select( ".obstable-date" ).select( "a" ).first()
-            checklist.link = linkElement.attr( "href" )
-            checklist.identifier = checklist.link.replace( "/view/checklist/", "" )
-            checklist.date = linkElement.text()
+
+            checklist.link = linkElement?.attr( "href" ) ?: ""
+            checklist.date = linkElement?.text() ?: ""
 
             return checklist
         }

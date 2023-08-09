@@ -4,7 +4,7 @@ import org.jsoup.nodes.Element
 import KBirdConfiguration
 import org.pythonbyte.krux.mapping.GpsCoordinates
 
-class Hotspot ( var name: String, var url: String ) : DomainObject() {
+class Hotspot ( val name: String, val url: String ) : DomainObject() {
     var speciesCount: Number? = 0
     var coordinates: GpsCoordinates? = null
 
@@ -15,6 +15,9 @@ class Hotspot ( var name: String, var url: String ) : DomainObject() {
     }
 
     fun getAsMarkdownListItem( configuration: KBirdConfiguration): String {
-        return "* [" + name + "](" + configuration.baseEBirdUrl + url + ") - " + speciesCount + " species (" + coordinates.toString() + ")"
+        val speciesCountText = speciesCount?.toString() ?: "unknown"
+        val coordinatesText = coordinates?.toString() ?: "unknown"
+
+        return "* [$name](${configuration.baseEBirdUrl}$url) - $speciesCountText species ($coordinatesText)"
     }
 }
