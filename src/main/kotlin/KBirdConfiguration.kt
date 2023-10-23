@@ -1,16 +1,16 @@
 import org.pythonbyte.krux.properties.PropertyReader
 
+const val PROPERTIES_FILE = "/k-bird.properties"
+
 class KBirdConfiguration {
     var baseEBirdUrl = ""
     var jsoupForHotspotDetailsSpeciesCount = ""
 
     companion object {
-        const val PROPERTIES_FILE = "/k-bird.properties"
-
         fun loadConfiguration(): KBirdConfiguration {
-            val propertyReader = PropertyReader(PROPERTIES_FILE)
-            val configuration = KBirdConfiguration()
-            configuration.baseEBirdUrl = propertyReader.get("kbird.baseEBirdUrl")
+            val configuration = KBirdConfiguration().apply {
+                baseEBirdUrl = PropertyReader(PROPERTIES_FILE).get("kbird.baseEBirdUrl")
+            }
 
             return configuration
         }

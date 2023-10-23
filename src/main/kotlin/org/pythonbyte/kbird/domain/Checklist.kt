@@ -12,16 +12,17 @@ class Checklist: DomainObject() {
 
     companion object {
         fun parseFromJsonTrElement( element: Element ) : Checklist {
-            val checklist = Checklist()
-            checklist.personName = element.select(".recent-visitor" ).text()
-            checklist.location = element.select( ".obstable-location" ).text()
-            checklist.time = element.select( "obstable-time").text()
-            checklist.identifier = checklist.link.replace( "/view/checklist/", "" )
+            val checklist = Checklist().apply {
+                personName = element.select(".recent-visitor" ).text()
+                location = element.select( ".obstable-location" ).text()
+                time = element.select( "obstable-time").text()
+                identifier = this.link.replace( "/view/checklist/", "" )
 
-            val linkElement = element.select( ".obstable-date" ).select( "a" ).first()
+                val linkElement = element.select( ".obstable-date" ).select( "a" ).first()
 
-            checklist.link = linkElement?.attr( "href" ) ?: ""
-            checklist.date = linkElement?.text() ?: ""
+                link = linkElement?.attr( "href" ) ?: ""
+                date = linkElement?.text() ?: ""
+            }
 
             return checklist
         }
