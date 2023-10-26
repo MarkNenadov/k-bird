@@ -8,11 +8,11 @@ fun main(args: Array<String> ) {
 
 fun fetchRecentHotspotChecklists(configuration: KBirdConfiguration, hotspotCode: String ) {
     val recentChecklists = HotspotRecentVisitsPageParser(hotspotCode, configuration).fetchRecentChecklists()
-    Thread.sleep( 300 )
-    for ( checklist in recentChecklists ) {
+    Thread.sleep(300)
+    for (checklist in recentChecklists) {
         println( checklist.getJson() )
         checklist.speciesEntries = ChecklistDetailsPageParser(checklist.identifier, configuration).fetchSpeciesEntries()
-        println( checklist.getJson() )
-        Thread.sleep( 50 )
+        println(checklist.getJson())
+        Thread.sleep(50)
     }
 }

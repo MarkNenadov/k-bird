@@ -29,4 +29,4 @@ fun exportToJson(edbFilePath: String, outputJsonFile: String) {
     }
     writer.close()
     bufferedReader.close()
-    }
+}

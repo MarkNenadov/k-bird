@@ -7,7 +7,7 @@ class HotspotTest {
     @Test
     fun testGetAsMarkdownListItem() {
         val configuration = KBirdConfiguration.loadConfiguration()
-        val hotspot = Hotspot("Sleepy Hollows", "http://test.url" )
-        assertEquals( "* [Sleepy Hollows](http://ebird.org/http://test.url) - 0 species (unknown)", hotspot.getAsMarkdownListItem( configuration ) )
+        val hotspot = Hotspot("Sleepy Hollows", "http://test.url")
+        assertEquals( "* [Sleepy Hollows](http://ebird.org/http://test.url) - 0 species (unknown)", hotspot.getAsMarkdownListItem(configuration))
     }
 }
