@@ -9,7 +9,7 @@ class HotspotTest {
         val expectedJson = "{\"@type\":\"org.pythonbyte.kbird.domain.Hotspot\",\"name\":\"Sleepy Hollows\",\"url\":\"http://test.url\",\"speciesCount\":{\"@type\":\"int\",\"value\":0},\"coordinates\":null}"
 
         val hotspot = Hotspot("Sleepy Hollows", "http://test.url")
-        assertEquals( expectedJson, hotspot.getJson() )
+        assertEquals(expectedJson, hotspot.getJson())
     }
 
     @Test
@@ -18,7 +18,7 @@ class HotspotTest {
         val hotspot = Hotspot("Sleepy Hollows", "http://test.url")
         assertEquals(
             "* [Sleepy Hollows](http://ebird.org/http://test.url) - 0 species (unknown)",
-            hotspot.getAsMarkdownListItem(configuration)
+            hotspot.getAsMarkdownListItem(configuration),
         )
     }
 }

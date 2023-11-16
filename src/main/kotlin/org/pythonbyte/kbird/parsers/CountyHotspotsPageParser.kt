@@ -32,9 +32,16 @@ class CountyHotspotsPageParser(
     private fun parsePageDetails(hotspot: Hotspot) {
         val detailsPageDocument = Jsoup.connect( configuration.baseEBirdUrl + hotspot.url).get()
 
-        hotspot.speciesCount = detailsPageDocument.select( "span.hs-section-count" ).firstOrNull()?.text()?.toLong()
+        hotspot.speciesCount = detailsPageDocument.select( "span.hs-section-count" )
+            .firstOrNull()
+            ?.text()
+            ?.toLong()
 
-        val googleMapsUrl = detailsPageDocument.select( ".sub-nat" ).select( "a[href^=http://maps.google.com]" ).attr( "href" )
+        val googleMapsUrl = detailsPageDocument
+            .select( ".sub-nat" )
+            .select( "a[href^=http://maps.google.com]" )
+            .attr( "href" )
+
         hotspot.coordinates = GpsCoordinates(
             googleMapsUrl.split( "&ll=" ).getOrNull( 1 ) ?: ""
         )

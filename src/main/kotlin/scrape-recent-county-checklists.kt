@@ -1,4 +1,4 @@
-import domain.CountyCodes
+import org.pythonbyte.kbird.domain.CountyCodes
 import org.pythonbyte.kbird.parsers.ChecklistDetailsPageParser
 import org.pythonbyte.kbird.parsers.CountyRecentVisitsPageParser
 fun main(args: Array<String>) {
