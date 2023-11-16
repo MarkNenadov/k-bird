@@ -6,7 +6,6 @@ fun main(args: Array<String> ) {
     val outputJsonFile = "C:\\java\\k-bird\\aebd_CA-ON-ES_relAug-2017\\output.json"
     exportToJson( edbFilePath, outputJsonFile )
 }
-
 fun exportToJson(edbFilePath: String, outputJsonFile: String) {
     val writer = PrintWriter( outputJsonFile )
 

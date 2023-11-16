@@ -30,6 +30,8 @@ class CountyHotspotsPageParser( val configuration: KBirdConfiguration, countyCod
         hotspot.speciesCount = detailsPageDocument.select( "span.hs-section-count" ).firstOrNull()?.text()?.toLong()
 
         val googleMapsUrl = detailsPageDocument.select( ".sub-nat" ).select( "a[href^=http://maps.google.com]" ).attr( "href" )
-        hotspot.coordinates = GpsCoordinates( googleMapsUrl.split( "&ll=" ).getOrNull( 1 ) ?: "" )
+        hotspot.coordinates = GpsCoordinates(
+            googleMapsUrl.split( "&ll=" ).getOrNull( 1 ) ?: ""
+        )
     }
 }
