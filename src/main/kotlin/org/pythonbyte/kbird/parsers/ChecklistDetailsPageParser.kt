@@ -2,17 +2,17 @@ package org.pythonbyte.kbird.parsers
 
 import KBirdConfiguration
 import org.jsoup.nodes.Element
+import org.pythonbyte.kbird.domain.Checklist
 import org.pythonbyte.kbird.domain.SpeciesEntry
 
 class ChecklistDetailsPageParser(
     checklistIdentifier: String,
     configuration: KBirdConfiguration
 ) : BasePageParser("${configuration.baseEBirdUrl}view/checklist/$checklistIdentifier") {
-    fun fetchSpeciesEntries() : ArrayList<SpeciesEntry> {
-        val speciesEntries = ArrayList<SpeciesEntry>()
-        selectClass( "spp-entry" ).mapTo(speciesEntries) { parseSpeciesEntry( it ) }
-
-        return speciesEntries
+    fun fetchSpeciesEntries() : List<SpeciesEntry> {
+        return selectClass( "spp-entry" ).map {
+            parseSpeciesEntry(it)
+        }
     }
 
     private fun parseSpeciesEntry( element: Element ) : SpeciesEntry {

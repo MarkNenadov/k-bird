@@ -5,12 +5,17 @@ import KBirdConfiguration
 import org.jsoup.Jsoup
 import org.pythonbyte.krux.mapping.GpsCoordinates
 
-class CountyHotspotsPageParser( val configuration: KBirdConfiguration, countyCode: String ): BasePageParser( "${configuration.baseEBirdUrl}/subnational2/$countyCode/hotspots?yr=all&m=" ) {
+class CountyHotspotsPageParser(
+    val configuration: KBirdConfiguration,
+    countyCode: String
+): BasePageParser( "${configuration.baseEBirdUrl}/subnational2/$countyCode/hotspots?yr=all&m=" ) {
     fun fetchHotspots(): List<Hotspot> {
         val hotspots = ArrayList<Hotspot>()
 
         for ( hotspotLinkTdElement in selectClass( "top-observer--subregion" ) ) {
-            val hotspot = hotspotLinkTdElement.select("a").first()?.let { Hotspot.createFromLinkElement(it) }
+            val hotspot = hotspotLinkTdElement.select("a").first()?.let {
+                Hotspot.createFromLinkElement(it)
+            }
             hotspot?.let {
                 println( "Fetched hotspot [${it.name}]..going to sleep for 2 seconds" )
 
