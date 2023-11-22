@@ -6,7 +6,7 @@ import org.jsoup.Jsoup
 import org.pythonbyte.krux.mapping.GpsCoordinates
 
 class CountyHotspotsPageParser(
-    val configuration: KBirdConfiguration,
+    private val configuration: KBirdConfiguration,
     countyCode: String
 ): BasePageParser( "${configuration.baseEBirdUrl}/subnational2/$countyCode/hotspots?yr=all&m=" ) {
     fun fetchHotspots(): List<Hotspot> {
