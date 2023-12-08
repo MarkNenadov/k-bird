@@ -1,20 +1,20 @@
 package org.pythonbyte.kbird.domain
 
-import org.jsoup.nodes.Element
 import KBirdConfiguration
+import org.jsoup.nodes.Element
 import org.pythonbyte.krux.mapping.GpsCoordinates
 
-class Hotspot (
+class Hotspot(
     val name: String,
     val url: String,
     var speciesCount: Number? = 0,
-    var coordinates: GpsCoordinates? = null
+    var coordinates: GpsCoordinates? = null,
 ) : DomainObject() {
     companion object {
-        fun createFromLinkElement( element: Element ) : Hotspot {
+        fun createFromLinkElement(element: Element): Hotspot {
             return Hotspot(
-                name=element.text(),
-                url=element.attr( "href" ).replace( "/ebird/", "" )
+                name = element.text(),
+                url = element.attr("href").replace("/ebird/", ""),
             )
         }
     }
