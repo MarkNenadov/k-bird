@@ -1,3 +1,5 @@
+import org.pythonbyte.krux.files.readSplit
+import org.pythonbyte.krux.files.readSplits
 import java.io.File
 import java.io.PrintWriter
 
@@ -10,10 +12,9 @@ fun exportToJson(edbFilePath: String, outputJsonFile: String) {
     val writer = PrintWriter(outputJsonFile)
 
     val bufferedReader = File(edbFilePath).bufferedReader()
-    val fieldNames = bufferedReader.readLine().split("\t")
+    val fieldNames = bufferedReader.readSplit("\t")
 
-    for (line in bufferedReader.readLines()) {
-        val lineValues = line.split("\t")
+    for (lineValues in bufferedReader.readSplits("\t")) {
         writer.append("{\n\t")
         for ((index, value) in lineValues.withIndex()) {
             if (value != "") {
